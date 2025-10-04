@@ -178,7 +178,7 @@ section h2 {
   text-align: center !important;
   font-size: 26px;
   margin: 40px 0 20px;
-  color: #222;
+  color: #030303;
 }
 
 #about {
@@ -191,7 +191,7 @@ section h2 {
 #about h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #04132d;
+  color: #02050b;
 }
 
 .about-box {
@@ -395,7 +395,7 @@ section h2 {
   background: #9dc4f1;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(6, 3, 3, 0.018);
 }
 
 .contact-form .form-group {
@@ -517,14 +517,23 @@ footer {
 }
 
 .sidebar nav ul li a:hover {
-  color: #ff9800;
+  background: #ff9800;
+  color: #fff;
   transform: scale(1.05);
 }
 
-/* Page content remains centered always */
+/* Main content always centered */
 main, section {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto;       /* centers content */
+  transition: margin-left 0.3s ease;
+}
+
+/* Optional: if you ever want to shift content slightly when sidebar is open */
+/* Shift content when sidebar is open */
+body.sidebar-open main,
+body.sidebar-open section {
+  transform: translateX(-100px);      /* shifts content to right */
 }
 
 

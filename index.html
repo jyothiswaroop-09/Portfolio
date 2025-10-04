@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="skill"><i class="fas fa-chart-bar"></i> Power BI</div>
     <div class="skill"><i class="fas fa-microchip"></i> Generative AI</div>
     <div class="skill"><i class="fas fa-network-wired"></i> Agentic AI</div>
+    <div class="skill"><i class="fas fa-laptop-code"></i> Web Development</div>
   </div>
 </section>
   
@@ -233,14 +234,12 @@ It allows you to upload a PDF, automatically extract text and tables, and then a
   <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.sidebar');
-
+  const body = document.body;
 menuToggle.addEventListener('click', () => {
   sidebar.classList.toggle('hidden'); // toggle sidebar overlay
+  body.classList.toggle('sidebar-open'); 
 });
 
 </script>
-
-
-
 </body>
 </html>
