@@ -11,6 +11,12 @@
 </head>
 <body>
 
+  <!-- Hamburger Menu Button -->
+<div class="menu-toggle" id="menu-toggle">
+  <i class="fas fa-bars"></i>
+</div>
+
+
   <!-- Sidebar Navbar -->
   <header>
     <nav>
@@ -30,11 +36,51 @@
 <section id="home" class="hero">
   <img src="assets\profil 2.jpg" alt="Profile Picture" class="profile-pic">
   <h1>Hello, I'm [Motupalli Jyothi Swaroop]</h1>
-  <p>Fresher | Data Science & AI/ML Enthusiast</p>
+  <p>And I'am a <span id="typed-text"></span><span class="cursor">|</span></p>
+
+  <script>
+const roles = ["'Data Scientist'", "'AI/ML Engineer'", "'Data Analyst'","'Python Developer'"];
+const typedText = document.getElementById("typed-text");
+
+let roleIndex = 0;
+let charIndex = 0;
+let typingDelay = 80;
+let erasingDelay = 40;
+let newRoleDelay = 1200;
+
+function type() {
+    if (charIndex < roles[roleIndex].length) {
+        typedText.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        setTimeout(erase, newRoleDelay);
+    }
+}
+
+function erase() {
+    if (charIndex > 0) {
+        typedText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+    } else {
+        roleIndex++;
+        if (roleIndex >= roles.length) roleIndex = 0;
+        setTimeout(type, typingDelay);
+    }
+}
+
+// Start typing on load
+document.addEventListener("DOMContentLoaded", function() {
+    if(roles.length) setTimeout(type, newRoleDelay);
+});
+</script>
+
+
 
   <!-- Hero Buttons -->
   <div class="hero-buttons">
-    <a href="assets\MOTUPALLI JYOTHI SWAROOP -Resume.pdf" target="_blank" class="btn"><i class="fas fa-file-alt"></i> Resume</a>
+    <a href="assets\M. JYOTHI SWAROOP -CV.pdf" target="_blank" class="btn"><i class="fas fa-file-alt"></i> Resume</a>
     <a href="https://github.com/jyothiswaroop-09" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
     <a href=" https://www.linkedin.com/in/jyothi-swaroop-278084338 " target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
   </div>
@@ -47,9 +93,8 @@
   <h2>About Me</h2>
   <div class="about-box">
     <p>
-      I am a fresher passionate about Machine Learning, Deep Learning, and AI. 
-      I enjoy building projects that solve real-world problems and constantly 
-      improving my skills in Python, TensorFlow, Scikit-learn and LLM Models.
+      “I’m an AI enthusiast with hands-on experience in Python, ML, Generative AI, and Agentic systems,
+       constantly expanding my knowledge by exploring the latest in AI, deep learning, and intelligent agents.”
     </p>
   </div>
 </section>
@@ -86,6 +131,7 @@
     <div class="skill"><i class="fas fa-table"></i> Excel</div>
     <div class="skill"><i class="fas fa-chart-bar"></i> Power BI</div>
     <div class="skill"><i class="fas fa-microchip"></i> Generative AI</div>
+    <div class="skill"><i class="fas fa-network-wired"></i> Agentic AI</div>
   </div>
 </section>
   
@@ -187,6 +233,23 @@ It allows you to upload a PDF, automatically extract text and tables, and then a
   <footer>
     <p>&copy; 2025 Motupalli Jyothi Swaroop. All rights reserved.</p>
   </footer>
+
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const header = document.querySelector('header');
+  const icon = menuToggle.querySelector('i');
+
+  menuToggle.addEventListener('click', () => {
+    // For desktop toggle
+    header.classList.toggle('hidden');
+    document.body.classList.toggle('sidebar-hidden');
+
+    // For mobile toggle
+    header.classList.toggle('active');
+  });
+</script>
+
+
 
 </body>
 </html>
