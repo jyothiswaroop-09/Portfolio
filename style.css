@@ -73,14 +73,14 @@ header nav ul li a:hover {
   align-items: center;    /* center everything horizontally */
   justify-content: center; /* center vertically */
   text-align: center;
-  padding: 60px 20px;
-  min-height: 100vh;       /* keeps hero full-screen height */
+  padding: 40px 20px;
+  min-height: 50vh;       /* keeps hero full-screen height */
   background: linear-gradient(135deg, #15053d, #599bca);
   color: #f3f3f5;
 }
 
 .hero-content {
-  max-width: 800px;       /* prevent stretching on wide screens */
+  max-width: 600px;       /* prevent stretching on wide screens */
 }
 
 
@@ -159,6 +159,18 @@ header nav ul li a:hover {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
+
+/* ===== Keep Content Centered When Sidebar Toggles ===== */
+main, section {
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.about, .education, .contact {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 
 
 /* About Section */
@@ -440,59 +452,85 @@ footer {
   margin-top: 30px;
 }
 
-/* ===== Menu Toggle (Hamburger Button) ===== */
-.menu-btn {
+/* ===== Menu Wrapper ===== */
+.menu-wrapper {
   position: fixed;
-  top: 25px;
-  left: 15px;
-  font-size: 28px;        /* ↓ smaller size (you can try 20–24px) */
-  color: #ff9800;         /* visible and matches your theme */
-  cursor: pointer;
+  top: 20px;
+  left: 20px;
   z-index: 3000;
-  background: none;
-  border:none;
-  transition: transform 0.2s ease;
+  text-align: left;
+  font-weight: bold;
 }
 
-.menu-btn:hover {
+/* Menu Button */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #ff9800;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3001; /* above sidebar */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
   transform: scale(1.1);
 }
 
-
-/* ===== Sidebar Transition ===== */
-header {
+/* Sidebar Overlay */
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   width: 220px;
   height: 100%;
   background: #111;
-  transition: left 0.3s ease;
+  padding-top: 60px; /* space for menu button */
+  transition: transform 0.3s ease;
   z-index: 2000;
 }
 
-header.hidden {
-  left: -230px; /* slide sidebar off-screen */
+.sidebar.hidden {
+  transform: translateX(-100%); /* completely hidden off-screen */
 }
 
-/* ===== Keep Content Centered When Sidebar Toggles ===== */
+.sidebar nav ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #dde5e7c3;
+  font-weight: bold;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ff9800;
+  transform: scale(1.05);
+}
+
+/* Page content remains centered always */
 main, section {
-  transition: all 0.3s ease;
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.about, .education, .contact {
-  margin: 0 auto;
-  max-width: 900px;
-}
+
 
 /* ===== Responsive Behavior ===== */
 @media (max-width: 768px) {
-  .menu-toggle {
-    font-size: 22px;     /* smaller on mobile */
-    top: 15px;
-    left: 15px;
-  }
   header {
     left: -230px;
   }
@@ -501,5 +539,3 @@ main, section {
     left: 0;
   }
 }
-
-

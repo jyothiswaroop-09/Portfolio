@@ -11,14 +11,10 @@
 </head>
 <body>
 
-  <!-- Hamburger Menu Button -->
-<div class="menu-toggle" id="menu-toggle">
-  <i class="fas fa-bars"></i>
-</div>
-
+<div class="menu-toggle">☰</div>
 
   <!-- Sidebar Navbar -->
-  <header>
+  <header class="sidebar hidden">
     <nav>
       <ul>
         <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
@@ -235,18 +231,13 @@ It allows you to upload a PDF, automatically extract text and tables, and then a
   </footer>
 
   <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const header = document.querySelector('header');
-  const icon = menuToggle.querySelector('i');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
 
-  menuToggle.addEventListener('click', () => {
-    // For desktop toggle
-    header.classList.toggle('hidden');
-    document.body.classList.toggle('sidebar-hidden');
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('hidden'); // toggle sidebar overlay
+});
 
-    // For mobile toggle
-    header.classList.toggle('active');
-  });
 </script>
 
 
