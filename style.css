@@ -74,13 +74,13 @@ header nav ul li a:hover {
   justify-content: center; /* center vertically */
   text-align: center;
   padding: 30px 20px;
-  min-height: 100vh;       /* keeps hero full-screen height */
+  min-height: 50vh;       /* keeps hero full-screen height */
   background: linear-gradient(135deg, #15053d, #599bca);
   color: #f3f3f5;
 }
 
 .hero-content {
-  max-width: 800px;       /* prevent stretching on wide screens */
+  max-width: 600px;       /* prevent stretching on wide screens */
 }
 
 
