@@ -700,3 +700,48 @@ body.sidebar-open section {
     font-size: 13px;
   }
 }
+/* =========================================
+   ✅ MOBILE MENU FIX
+=========================================*/
+
+@media (max-width: 768px) {
+  /* Ensure menu button stays on top and clickable */
+  .menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 5000 !important; /* ensure above all layers */
+    background: #ff9800;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Sidebar hidden by default */
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background: #111;
+    padding-top: 60px;
+    z-index: 4000;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* When active, show it */
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Prevent background content overlap issues */
+  main, section {
+    position: relative;
+    z-index: 1000;
+  }
+}
