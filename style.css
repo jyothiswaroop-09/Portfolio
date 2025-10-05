@@ -14,8 +14,6 @@ body {
   transition: background 0.5s ease-in-out;
 }
 
-
-
 /* Sidebar Navbar */
 header {
   position: fixed;
@@ -31,7 +29,6 @@ header {
 header.hidden {
   transform: translateX(-230px);
 }
-
 
 header nav ul {
   list-style: none;
@@ -70,35 +67,33 @@ header nav ul li a:hover {
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: center;    /* center everything horizontally */
-  justify-content: center; /* center vertically */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 40px 20px;
-  min-height: 50vh;       /* keeps hero full-screen height */
+  min-height: 50vh;
   background: linear-gradient(135deg, #15053d, #599bca);
   color: #f3f3f5;
 }
 
 .hero-content {
-  max-width: 600px;       /* prevent stretching on wide screens */
+  max-width: 600px;
 }
 
-
 .hero .profile-pic {
-  width: 300px;              /* wider than before */
-  height: 300px;             /* keeps it proportional */
-  border-radius: 20%;        /* less circular, more rounded rectangle */
+  width: 300px;
+  height: 300px;
+  border-radius: 20%;
   border: 5px solid #94e0f1;
   margin-bottom: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 25px rgba(148, 224, 241, 0.8); /* glowing effect */
+  box-shadow: 0 0 25px rgba(148, 224, 241, 0.8);
 }
 
 .hero .profile-pic:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(148, 224, 241, 1); /* stronger glow on hover */
+  box-shadow: 0 0 40px rgba(148, 224, 241, 1);
 }
-
 
 .hero h1 {
   font-size: 32px;
@@ -142,7 +137,7 @@ header nav ul li a:hover {
 /* Section Titles */
 #typed-text {
   font-weight: bold;
-  font-size: 36px;      /* or 40px for more visibility */
+  font-size: 36px;
   color: #ff9800;
 }
 
@@ -153,7 +148,6 @@ header nav ul li a:hover {
   margin-left: 2px;
   animation: blink 0.7s infinite;
 }
-
 
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
@@ -171,8 +165,6 @@ main, section {
   max-width: 900px;
 }
 
-
-
 /* About Section */
 section h2 {
   text-align: center !important;
@@ -184,8 +176,8 @@ section h2 {
 #about {
   text-align: center;
   padding: 40px 20px;
-  max-width: 900px;      /* keeps content centered and neat */
-  margin: 0 auto;        /* centers entire section */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 #about h2 {
@@ -198,8 +190,8 @@ section h2 {
   background: #72b4d3;
   border-radius: 12px;
   padding: 30px;
-  max-width: 700px;          /* Restrict box width */
-  width: 90%;                /* Keeps it responsive */
+  max-width: 700px;
+  width: 90%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   font-size: 18px;
   line-height: 1.8;
@@ -207,9 +199,6 @@ section h2 {
   margin: auto;
   text-align: center;
 }
-
-
-
 
 /* Education Section */
 .education-container {
@@ -219,7 +208,7 @@ section h2 {
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  justify-items: center;   /* center the grid items */
+  justify-items: center;
 }
 
 .edu-card {
@@ -283,7 +272,6 @@ section h2 {
   color: #fff;
 }
 
-
 /* Projects Section */
 #projects {
   padding: 20px;
@@ -338,14 +326,14 @@ section h2 {
 .project a {
   display: inline-block;
   margin-top: 8px;
-  color: #2575fc;
+  color: #174ca9;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .project a:hover {
-  color: #7378e2;
+  color: #08090d;
   text-decoration: underline;
 }
 
@@ -353,7 +341,7 @@ section h2 {
 .cert-gallery {
   display: flex;
   justify-content: center;
-  align-items: center;     /* Optional: vertically align */
+  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
   padding: 20px;
@@ -473,7 +461,7 @@ footer {
   border-radius: 8px;
   font-size: 24px;
   cursor: pointer;
-  z-index: 3001; /* above sidebar */
+  z-index: 3001;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s;
 }
@@ -490,13 +478,13 @@ footer {
   width: 220px;
   height: 100%;
   background: #111;
-  padding-top: 60px; /* space for menu button */
+  padding-top: 60px;
   transition: transform 0.3s ease;
   z-index: 2000;
 }
 
 .sidebar.hidden {
-  transform: translateX(-100%); /* completely hidden off-screen */
+  transform: translateX(-100%);
 }
 
 .sidebar nav ul {
@@ -524,19 +512,16 @@ footer {
 
 /* Main content always centered */
 main, section {
-  max-width: 900px;
-  margin: 0 auto;       /* centers content */
-  transition: margin-left 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: margin-right 0.3s ease;
 }
 
-/* Optional: if you ever want to shift content slightly when sidebar is open */
 /* Shift content when sidebar is open */
 body.sidebar-open main,
 body.sidebar-open section {
-  transform: translateX(-100px);      /* shifts content to right */
+  transform: translateX(-90px);
 }
-
-
 
 /* ===== Responsive Behavior ===== */
 @media (max-width: 768px) {
@@ -546,5 +531,172 @@ body.sidebar-open section {
 
   header.active {
     left: 0;
+  }
+}
+
+/* =========================================
+   ✅ MOBILE RESPONSIVENESS ADDITION ONLY
+=========================================*/
+
+/* For tablets and smaller (≤ 768px) */
+@media (max-width: 768px) {
+
+  body {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  header,
+  .sidebar {
+    width: 200px;
+    transform: translateX(-100%);
+  }
+
+  header.active,
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  main, section {
+    margin: 0 auto;
+    max-width: 95%;
+    padding: 10px;
+    transform: none !important;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 15px;
+    min-height: auto;
+  }
+
+  .hero .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #about {
+    padding: 30px 15px;
+  }
+
+  .about-box {
+    width: 100%;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .education-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .skill {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project video {
+    max-height: 200px;
+  }
+
+  .cert-gallery img {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  .contact-box, .contact-form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* For small phones (≤ 480px) */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .menu-toggle {
+    top: 10px;
+    left: 10px;
+    font-size: 22px;
+    padding: 8px 10px;
+  }
+
+  .hero .profile-pic {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #typed-text, .cursor {
+    font-size: 24px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  .about-box {
+    font-size: 15px;
+    padding: 15px;
+  }
+
+  .skill {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .project h3 {
+    font-size: 18px;
+  }
+
+  .contact-box,
+  .contact-form {
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 13px;
   }
 }
